@@ -11,7 +11,7 @@ COPY package*.json ./
 RUN npm install
 
 # Copia el resto de los archivos del proyecto
-COPY . .
+COPY ./build /usr/share/nginx/html
 
 # Expone el puerto en el que corre la aplicación (ajusta según el microservicio)
 EXPOSE 3000
