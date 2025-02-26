@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { envs } from './config';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { RpcCustomExceptionFilter } from './common';
+import { JwtAuthGuard } from './auth/jwt-auth.guard';
 
 async function bootstrap() {
   const logger = new Logger('Main-Gateway');
@@ -20,6 +21,7 @@ async function bootstrap() {
 
   app.useGlobalFilters(new RpcCustomExceptionFilter());
 
+  app.useGlobalGuards(app.get(JwtAuthGuard));
   await app.listen(envs.port);
 
   logger.log(`trabajando en el puerto: ${envs.port}`);
