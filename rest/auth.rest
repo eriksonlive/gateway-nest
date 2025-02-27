@@ -1,0 +1,7 @@
+@lorem = http://localhost:3000/api
+@token = eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJtb3Ryb3hAaG90bWFpbC5pdCIsImlhdCI6MTc0MDY5OTgxNiwiZXhwIjoxNzQwNzAzNDE2fQ.Foa4KjN9zB3i47MklNWZlnmPx6PYuZ_QzPoJNY_tyKJtomCgaG29KU4kV1T3ZkIQ7UDNTNfMU7Ybh81gnOCsRQ
+
+###
+
+GET {{ lorem }}/products/
+Authorization: Bearer {{ token }}
