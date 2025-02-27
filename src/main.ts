@@ -10,6 +10,10 @@ async function bootstrap() {
 
   const app = await NestFactory.create(AppModule);
 
+  app.enableCors({
+    origin: ['http://localhost:3000', 'https://energytalento.tech'], // o el dominio de tu front
+  });
+
   app.setGlobalPrefix('api');
 
   app.useGlobalPipes(
