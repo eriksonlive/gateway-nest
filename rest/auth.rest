@@ -3,5 +3,5 @@
 
 ###
 
-GET {{ lorem }}/products/
+GET {{ lorem }}/products/7
 Authorization: Bearer {{ token }}

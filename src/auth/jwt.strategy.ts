@@ -8,8 +8,8 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: "lorem-ipsum", // Asegúrate de que este valor coincida con el de Spring Boot
-      algorithms: ['HS256'],
+      secretOrKey: 'lorem-ipsum', // Asegúrate de que este valor coincida con el de Spring Boot
+      algorithms: ['HS512'],
     });
   }
 

@@ -26,7 +26,8 @@ async function bootstrap() {
 
   app.useGlobalFilters(new RpcCustomExceptionFilter());
 
-  app.use(new JwtMiddleware().use);
+  app.useGlobalGuards(app.get(JwtAuthGuard));
+  // app.use(new JwtMiddleware().use);
   await app.listen(envs.port);
 
   logger.log(`trabajando en el puerto: ${envs.port}`);
