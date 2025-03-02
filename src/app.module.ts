@@ -5,9 +5,10 @@ import { AuthModule } from './auth/auth.module';
 import { JwtStrategy } from './auth/jwt.strategy';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import { APP_GUARD } from '@nestjs/core';
+import { AuthFirebaseModule } from './authFirebase/auth-firebase.module';
 
 @Module({
-  imports: [ProductsModule, OrdersModule, AuthModule],
+  imports: [ProductsModule, OrdersModule, AuthModule, AuthFirebaseModule],
   providers: [
     JwtStrategy,
     // Esto aplica el JwtAuthGuard a todas las rutas de la aplicación
